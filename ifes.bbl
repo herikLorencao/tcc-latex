@@ -1,0 +1,147 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.6 }
+
+\bibitem[Adomavicius e Tuzhilin 2005]{adomavicius2005}
+\abntrefinfo{Adomavicius e Tuzhilin}{ADOMAVICIUS; TUZHILIN}{2005}
+{ADOMAVICIUS, G.; TUZHILIN, A. Toward the next generation of recommender
+  systems: A survey of the state-of-the-art and possible extensions.
+\emph{IEEE Transactions on Knowledge \& Data Engineering}, IEEE, n.~6, p.
+  734--749, 2005.}
+
+\bibitem[Al-Shamri e Bharadwaj 2008]{al2008}
+\abntrefinfo{Al-Shamri e Bharadwaj}{AL-SHAMRI; BHARADWAJ}{2008}
+{AL-SHAMRI, M. Y.~H.; BHARADWAJ, K.~K. Fuzzy-genetic approach to recommender
+  systems based on a novel hybrid user model.
+\emph{Expert systems with applications}, Elsevier, v.~35, n.~3, p. 1386--1399,
+  2008.}
+
+\bibitem[Alyari e Navimipour 2018]{alyari2018}
+\abntrefinfo{Alyari e Navimipour}{ALYARI; NAVIMIPOUR}{2018}
+{ALYARI, F.; NAVIMIPOUR, N. J. Recommender systems: a systematic review of the
+  state of the art literature and suggestions for future research.
+\emph{Kybernetes}, Emerald Publishing Limited, v.~47, n.~5, p. 985--1017,
+  2018.}
+
+\bibitem[Cazella, Nunes e Reategui 2010]{cazella2010}
+\abntrefinfo{Cazella, Nunes e Reategui}{CAZELLA; NUNES; REATEGUI}{2010}
+{CAZELLA, S.~C.; NUNES, M.; REATEGUI, E. A ci{\^e}ncia da opini{\~a}o: Estado
+  da arte em sistemas de recomenda{\c{c}}{\~a}o.
+\emph{Andr{\'e} Ponce de Leon F. de Carvalho; Tomasz Kowaltowski..(Org.).
+  Jornada de Atualiza{\c{c}}{\~a}o de Inform{\'a}tica-JAI}, p. 161--216, 2010.}
+
+\bibitem[Centeno, Fresno e Chaquet 2018]{centeno2018}
+\abntrefinfo{Centeno, Fresno e Chaquet}{CENTENO; FRESNO; CHAQUET}{2018}
+{CENTENO, R.; FRESNO, V.; CHAQUET, J. From textual reviews to individual
+  reputation rankings: Leaving ratings aside solving mpc task.
+\emph{Expert Systems with Applications}, Elsevier, v.~114, p. 1--14, 2018.}
+
+\bibitem[Deitel 2016]{deitel2016}
+\abntrefinfo{Deitel}{DEITEL}{2016}
+{DEITEL, P. \emph{Java: Como Programar}. Pearson, 2016.
+ISBN 8543004799. Dispon{\'\i}vel em:
+  \url{https://www.amazon.com/Pearson-Java-Como-Programar/dp/8543004799?SubscriptionId=AKIAIOBINVZYXZQZ2U3A&tag=chimbori05-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=8543004799}.}
+
+\bibitem[Falk 2019]{kimfalk2019}
+\abntrefinfo{Falk}{FALK}{2019}
+{FALK, K. \emph{Practical Recommender Systems}. Manning Publications, 2019.
+ISBN 1617292702. Dispon{\'\i}vel em:
+  \url{https://www.amazon.com/Practical-Recommender-Systems-Kim-Falk/dp/1617292702?SubscriptionId=AKIAIOBINVZYXZQZ2U3A&tag=chimbori05-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=1617292702}.}
+
+\bibitem[G{\"o}ksedef e G{\"u}nd{\"u}z-{\"O}{\u{g}}{\"u}d{\"u}c{\"u}
+  2010]{goksedef2010}
+\abntrefinfo{G{\"o}ksedef e
+  G{\"u}nd{\"u}z-{\"O}{\u{g}}{\"u}d{\"u}c{\"u}}{G{\"O}KSEDEF;
+  G{\"U}ND{\"U}Z-{\"O}{\u{G}}{\"U}D{\"U}C{\"U}}{2010}
+{G{\"O}KSEDEF, M.; G{\"U}ND{\"U}Z-{\"O}{\u{G}}{\"U}D{\"U}C{\"U}, {\c{S}}.
+  Combination of web page recommender systems.
+\emph{Expert Systems with Applications}, Elsevier, v.~37, n.~4, p. 2911--2922,
+  2010.}
+
+\bibitem[Grama et al. 2003]{grama2003}
+\abntrefinfo{Grama et al.}{GRAMA et al.}{2003}
+{GRAMA, A. et al. \emph{Introduction to Parallel Computing (2nd Edition)}.
+  Pearson, 2003.
+ISBN 0201648652. Dispon{\'\i}vel em:
+  \url{https://www.amazon.com/Introduction-Parallel-Computing-Ananth-Grama/dp/0201648652?SubscriptionId=AKIAIOBINVZYXZQZ2U3A&tag=chimbori05-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=0201648652}.}
+
+\bibitem[Iscen 2017]{iscen2017}
+\abntrefinfo{Iscen}{ISCEN}{2017}
+{ISCEN, A.~S. \emph{Programming model and interpreted runtime environment for
+  high performance services with implicit concurrency control}. [S.l.]: Google
+  Patents, 2017.
+US Patent App. 15/592,061.}
+
+\bibitem[Isinkaye, Folajimi e Ojokoh 2015]{isinkaye2015}
+\abntrefinfo{Isinkaye, Folajimi e Ojokoh}{ISINKAYE; FOLAJIMI; OJOKOH}{2015}
+{ISINKAYE, F.; FOLAJIMI, Y.; OJOKOH, B. Recommendation systems: Principles,
+  methods and evaluation.
+\emph{Egyptian Informatics Journal}, Elsevier, v.~16, n.~3, p. 261--273, 2015.}
+
+\bibitem[Jin et al. 2015]{jin2015}
+\abntrefinfo{Jin et al.}{JIN et al.}{2015}
+{JIN, X. et al. Significance and challenges of big data research.
+\emph{Big Data Research}, Elsevier, v.~2, n.~2, p. 59--64, 2015.}
+
+\bibitem[Koren, Bell e Volinsky 2009]{koren2009}
+\abntrefinfo{Koren, Bell e Volinsky}{KOREN; BELL; VOLINSKY}{2009}
+{KOREN, Y.; BELL, R.; VOLINSKY, C. Matrix factorization techniques for
+  recommender systems.
+\emph{Computer}, IEEE, n.~8, p. 30--37, 2009.}
+
+\bibitem[Lee et al. 2013]{lee2013}
+\abntrefinfo{Lee et al.}{LEE et al.}{2013}
+{LEE, J. et al. Local low-rank matrix approximation. In:  \emph{International
+  conference on machine learning}. [S.l.: s.n.], 2013. p. 82--90.}
+
+\bibitem[McKinney 2012]{mckinney2012}
+\abntrefinfo{McKinney}{MCKINNEY}{2012}
+{MCKINNEY, W. \emph{Python for data analysis: Data wrangling with Pandas,
+  NumPy, and IPython}. [S.l.]: " O'Reilly Media, Inc.", 2012.}
+
+\bibitem[Mican e Tomai 2010]{mican2010}
+\abntrefinfo{Mican e Tomai}{MICAN; TOMAI}{2010}
+{MICAN, D.; TOMAI, N. Association-rules-based recommender system for
+  personalization in adaptive web-based applications. In:  SPRINGER.
+  \emph{International Conference on Web Engineering}. [S.l.], 2010. p. 85--90.}
+
+\bibitem[Pathak et al. 2010]{pathak2010}
+\abntrefinfo{Pathak et al.}{PATHAK et al.}{2010}
+{PATHAK, B. et al. Empirical analysis of the impact of recommender systems on
+  sales.
+\emph{Journal of Management Information Systems}, Taylor \& Francis, v.~27,
+  n.~2, p. 159--188, 2010.}
+
+\bibitem[Rashid et al. 2002]{rashid2002}
+\abntrefinfo{Rashid et al.}{RASHID et al.}{2002}
+{RASHID, A.~M. et al. Getting to know you: learning new user preferences in
+  recommender systems. In:  ACM. \emph{Proceedings of the 7th international
+  conference on Intelligent user interfaces}. [S.l.], 2002. p. 127--134.}
+
+\bibitem[Sarwar et al. 2001]{sarwar2001}
+\abntrefinfo{Sarwar et al.}{SARWAR et al.}{2001}
+{SARWAR, B.~M. et al. Item-based collaborative filtering recommendation
+  algorithms.
+\emph{Www}, v.~1, p. 285--295, 2001.}
+
+\bibitem[Sedhain et al. 2015]{sedhain2015}
+\abntrefinfo{Sedhain et al.}{SEDHAIN et al.}{2015}
+{SEDHAIN, S. et al. Autorec: Autoencoders meet collaborative filtering. In:
+  ACM. \emph{Proceedings of the 24th International Conference on World Wide
+  Web}. [S.l.], 2015. p. 111--112.}
+
+\bibitem[Smith e Linden 2017]{smith2017}
+\abntrefinfo{Smith e Linden}{SMITH; LINDEN}{2017}
+{SMITH, B.; LINDEN, G. Two decades of recommender systems at amazon. com.
+\emph{Ieee internet computing}, IEEE, v.~21, n.~3, p. 12--18, 2017.}
+
+\bibitem[Stack~Overflow 2019]{stackoverflow}
+\abntrefinfo{Stack~Overflow}{STACK~OVERFLOW}{2019}
+{STACK~OVERFLOW. 2019.
+Dispon{\'\i}vel em:
+  \url{https://insights.stackoverflow.com/trends?tags=r,python,numpy}.}
+
+\end{thebibliography}

@@ -1,0 +1,30 @@
+
+%%% ====================================================================
+%%% Exemplo de construção da folha de aprovação. Depois da
+%%% apresentação do trabalho, quando a folha de apresentação real
+%%% tiver sido assinada pela banca, a folha real deve ser digitalizada
+%%% e o ambiente abaixo deve ser substituído por:
+%%% \includepdf{folhadeaprovacao_final.pdf}
+\begin{folhadeaprovacao}
+  \begin{center}
+    {\ABNTEXchapterfont\MakeTextUppercase{\imprimirautor}}\\
+    \begin{center}
+      \ABNTEXchapterfont\MakeTextUppercase{\imprimirtitulo}\\
+    \end{center}
+    \hspace{.45\textwidth}
+    \begin{minipage}{.5\textwidth}
+      {\footnotesize{\imprimirpreambulo}}
+    \end{minipage}%
+  \end{center}
+  \vspace{-1cm}%
+  \begin{center}
+    Aprovado em 19 de Março de 2020.\\[15mm]
+    \textbf{COMISSÃO EXAMINADORA}\\[5mm]
+    \assinatura{\imprimirorientador \\
+      Instituto Federal do Espírito Santo - Cachoeiro de Itapemirim \\ Orientador}\vspace{-1cm}
+    \assinatura{DSc. Susana Brunoro Costa de Oliveira \\
+      Instituto Federal do Espírito Santo - Cachoeiro de Itapemirim}\vspace{-1cm}
+    \assinatura{DSc. Eros Estevão de Moura \\
+      Instituto Federal do Espírito Santo - Cachoeiro de Itapemirim}\vspace{-1cm}
+  \end{center}
+\end{folhadeaprovacao}
