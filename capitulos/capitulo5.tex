@@ -55,3 +55,65 @@ Número de recomendações & 47                  \\ \hline
 \end{tabular}
 \label{table:resultadosEstudoCasoEdu} 
 \end{table}
+
+\subsection{Análise Descritiva}
+
+Utilizando-se da estatística descritiva, pode-se avaliar a porcentagem de recomendações que foram aceitas pelos usuários do sistema, verificando, desse modo, sua taxa de acerto. Na figura \ref{fig:analiseDescritiva}, é possível avaliar os resultados obtidos nas recomendações como também as notas avaliadas pelos alunos para cada pergunta. A partir desses dados é possível realizar o processo de estatística descritiva.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{imagens/estatisticaDescritiva.jpg}
+	\caption[Estatística Descritiva]{Estatística Descritiva}
+    \label{fig:analiseDescritiva}
+\end{figure}
+
+Avaliando as células marcadas na cor verde na figura \ref{fig:analiseDescritiva}, que representam os itens recomendados (notas maiores que o ponto de corte, definido como 4), é possível visualizar a quantidade de acertos e erros das abordagens de recomendação em relação as notas avaliadas pelos usuários. Esses dados são apresentados na figura \ref{fig:analiseDescritivaTaxas}:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.9\linewidth]{imagens/analiseDescritivaTaxas.jpg}
+	\caption[Taxas da Estatística Descritiva]{Taxas da Estatística Descritiva}
+    \label{fig:analiseDescritivaTaxas}
+\end{figure}
+
+A partir dos dados disponíveis na figura \ref{fig:analiseDescritivaTaxas}, conclui-se que as abordagens híbridas (marcadas com a cor verde) obtiveram um resultado superior as abordagens colaborativas e baseada em conteúdo no estudo analisado. Vale ressaltar o resultado obtido na abordagem híbrida mista, que apresentou um resultado 16,66\% superior as abordagens não híbridas.
+
+\subsection{Testes em T}
+
+Como forma de avaliar os resultados sobre outra perspectiva e metodologia, foram realizados os testes em T que representam outra forma de análise estatística. Nesse tipo de análise, é buscado verificar a diferença entre as médias das recomendações, sendo que quando menor for essa distância melhor o resultado, visto que isso significa que as recomendações estão retornando valores estatisticamente iguais aos avaliados pelos usuários.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.7\linewidth]{imagens/testeTColaborativa.jpg}
+	\caption[Teste T: Filtragem Colaborativa]{Teste T: Filtragem Colaborativa}
+    \label{fig:testeTColaborativa}
+\end{figure}
+
+A partir dos resultados obtidos na figura \ref{fig:testeTColaborativa}, pode-se observar que o valor de \textbf{P(t<=t) bi-caudal} é superior a \textbf{0,05}. Isso significa que as recomendações para filtragem colaborativa foram boas, uma vez que apresentam similaridade com as avaliações dos usuários.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.7\linewidth]{imagens/testeTConteudo.jpg}
+	\caption[Teste T: Filtragem Baseada em Conteúdo]{Teste T: Filtragem Baseada em Conteúdo}
+    \label{fig:testeTConteudo}
+\end{figure}
+
+Os resultados para filtragem baseada em conteúdo, apresentados na figura \ref{fig:testeTConteudo} demonstram um valor para \textbf{P(t<=t) bi-caudal} inferior a \textbf{0,05}. Com isso, é observado que existem uma divergência entre os resultados das recomendações baseadas em conteúdo se comparado com as avaliações dos usuários.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.7\linewidth]{imagens/testeTPonderada.jpg}
+	\caption[Teste T: Filtragem Híbrida Ponderada]{Filtragem Híbrida Ponderada}
+    \label{fig:testeTPonderado}
+\end{figure}
+
+A partir das informações mostradas na figura \ref{fig:testeTPonderado}, é possível analisar que o valor \textbf{P(t<=t) bi-caudal} é superior a \textbf{0,05}. Isso demonstra que as recomendações geradas na filtragem híbrida ponderada apresentam similaridade com as avaliações dos usuários.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.7\linewidth]{imagens/testeTMisto.jpg}
+	\caption[Teste T: Filtragem Híbrida Mista]{Filtragem Híbrida Mista}
+    \label{fig:testeTMisto}
+\end{figure}
+
+Os resultados da filtragem híbrida mista, apresentados na figura \ref{fig:testeTMisto} demonstram que o valor \textbf{P(t<=t) bi-caudal} é inferior a \textbf{0,05}. Desse modo, é possível observar que existem divergências entre os resultados apresentados pela filtragem híbrida mista e as avaliações dos usuários.
