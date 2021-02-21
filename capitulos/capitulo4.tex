@@ -81,7 +81,11 @@ No processo de desenvolvimento do sistema proposto, foram utilizadas as seguinte
 
 \section{Algoritmo}
 
-Para desenvolvimento dos algoritmos de filtragem colaborativa e baseada em conteúdo, foram usados como base, respectivamente, os trabalhos de \citeonline{tcctiago} e \citeonline{tccluisa}. A recomendação híbrida combina os dois métodos de recomendações (colaborativa e baseada em conteúdo) e gera seus resultados de acordo com a abordagem definida para execução do algoritmo. Todos os cálculos podem serem vistos detalhadamente na seção de Anexos desse trabalho.
+Para desenvolvimento dos algoritmos de filtragem colaborativa e baseada em conteúdo, foram usados como base, respectivamente, os trabalhos de \citeonline{tcctiago} e \citeonline{tccluisa}. A recomendação híbrida combina os dois métodos de recomendações (colaborativa e baseada em conteúdo) e gera seus resultados de acordo com a abordagem definida para execução do algoritmo.
+
+Como definido por \cite{barbosa2014} existem diversas abordagens que podem ser utilizadas para recomendação híbrida. Nesse trabalho, foram desenvolvidas as abordagens ponderada e mista que podem ser escolhidas no momento da realização da recomendação híbrida.
+
+Todos os cálculos e processos dos algoritmos podem ser vistos detalhadamente na seção de Anexos desse trabalho.
 
 \subsection{Distância euclidiana}
 
@@ -130,7 +134,7 @@ Com essa tabela gerada, é possível utilizá-la para multiplicação e geraçã
 
 \subsection{Recomendação Híbrida}
 
-Na recomendação híbrida é utilizado uma combinação das abordagens colaborativa e baseada em conteúdo conforme a figura \ref{fig:algoritmohibrido}:
+Na recomendação híbrida é utilizado uma combinação das abordagens colaborativa e baseada em conteúdo conforme a figura \ref{fig:algoritmohibrido}. Para exemplificar o caso, pode-se definir que as cédulas representadas pela cor verde mostram os itens que serão recomendados a partir de uma nota de corte predefinida:
 
 \begin{figure}[H]
 	\centering
