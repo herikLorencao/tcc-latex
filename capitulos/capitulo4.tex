@@ -134,7 +134,13 @@ Com essa tabela gerada, é possível utilizá-la para multiplicação e geraçã
 
 \subsection{Recomendação Híbrida}
 
-Na recomendação híbrida é utilizado uma combinação das abordagens colaborativa e baseada em conteúdo conforme a figura \ref{fig:algoritmohibrido}. Para exemplificar o caso, pode-se definir que as cédulas representadas pela cor verde mostram os itens que serão recomendados a partir de uma nota de corte predefinida:
+Na recomendação híbrida é utilizado uma combinação das abordagens colaborativa e baseada em conteúdo conforme a figura \ref{fig:algoritmohibrido}. Para exemplificar o caso, pode-se definir que as cédulas representadas pela cor verde mostram os itens que serão recomendados a partir de uma nota de corte predefinida. As notas serão apresentadas em três cores, com os seguintes significados:
+
+\begin{itemize}
+    \item \textbf{Cinza}: Notas obtidas a partir da avaliação do usuário;
+    \item \textbf{Verde}: Notas acima da média de corte, define quais itens serão recomendados;
+    \item \textbf{Vermelho}: Notas abaixo da média de corte, define os itens que não serão recomendados.
+\end{itemize}
 
 \begin{figure}[H]
 	\centering

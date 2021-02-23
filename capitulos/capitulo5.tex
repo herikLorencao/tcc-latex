@@ -47,17 +47,17 @@ Foi desenvolvido um endpoint que possibilita o cálculo das recomendações de m
 
 Como base para desenvolvimento foi utilizado o projeto oferecido pela documentação do \textbf{Spring} \footnote{Disponível em: https://spring.io/guides/gs/async-method/} que demonstra o uso do sistema de concorrência e como essa técnica pode permitir a melhoria no tempo de execução de códigos complexos.
 
-Para os testes de velocidade, foram utilizados dois ambientes para execução mostrados na tabela abaixo:
+Para os testes de velocidade, foi utilizado o seguinte ambiente para execução, mostrado na tabela abaixo:
 
 \begin{table}[H]
 \centering
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{|c|c|}
 \hline
-\textbf{Informações}    & \textbf{Ambiente 1} & \textbf{Ambiente 2} \\ \hline
-Tipo de servidor        & Local               & Remoto              \\ \hline
-Número de processadores & 2                   & 1                   \\ \hline
-Memória RAM             & 8 GB                & 1 GB                \\ \hline
-Armazenamento           & 1 TB                & 25 GB               \\ \hline
+\textbf{Informações} & \textbf{Tempo de Execução (ms)} \\ \hline
+Número Processadores & 2                               \\ \hline
+Número de Threads    & 4                               \\ \hline
+Mémoria RAM          & 8 GB                            \\ \hline
+Armazenamento        & 1 TB HDD                        \\ \hline
 \end{tabular}
 \end{table}
 
@@ -65,36 +65,33 @@ Com os ambientes definidos, foram executadas três requisições para cada abord
 
 \begin{table}[H]
 \centering
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{|c|c|}
 \hline
-\multicolumn{3}{|c|}{\textbf{Tempo de Recomendação - Sem Concorrência}}                      \\ \hline
-\textbf{Informações}                  & \multicolumn{2}{c|}{\textbf{Tempo de Execução (ms)}} \\ \hline
-Ambientes                             & Ambiente 1                & Ambiente 2               \\ \hline
-Recomendação Colaborativa             & x ms                      & x ms                     \\ \hline
-Recomendação Baseada em Conteúdo      & x ms                      & x ms                     \\ \hline
-Recomendação Híbrida Ponderada        & x ms                      & x ms                     \\ \hline
-Recomendação Híbrida Mista            & x ms                      & x ms                     \\ \hline
+\multicolumn{2}{|c|}{\textbf{Tempo de Recomendação - Sem Concorrência}} \\ \hline
+\textbf{Informações}                 & \textbf{Tempo de Execução (s)}    \\ \hline
+Recomendação Colaborativa            & 2,88                               \\ \hline
+Recomendação Baseada em Conteúdo     & 3,02                               \\ \hline
+Recomendação Híbrida Ponderada       & 20,64                              \\ \hline
+Recomendação Híbrida Mista           & 5,64                               \\ \hline
 \end{tabular}
 \end{table}
 
 \begin{table}[H]
 \centering
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{|c|c|}
 \hline
-\multicolumn{3}{|c|}{\textbf{Tempo de Recomendação - Com Concorrência}}                      \\ \hline
-\textbf{Informações}                  & \multicolumn{2}{c|}{\textbf{Tempo de Execução (ms)}} \\ \hline
-Ambientes                             & Ambiente 1                & Ambiente 2               \\ \hline
-Recomendação Colaborativa             & x ms                      & x ms                     \\ \hline
-Recomendação Baseada em Conteúdo      & x ms                      & x ms                     \\ \hline
-Recomendação Híbrida Ponderada        & x ms                      & x ms                     \\ \hline
-Recomendação Híbrida Mista            & x ms                      & x ms                     \\ \hline
+\multicolumn{2}{|c|}{\textbf{Tempo de Recomendação - Com Concorrência}} \\ \hline
+\textbf{Informações}                 & \textbf{Tempo de Execução (s)}    \\ \hline
+Recomendação Colaborativa            & 30,41                              \\ \hline
+Recomendação Baseada em Conteúdo     & 26,78                               \\ \hline
+Recomendação Híbrida Ponderada       & 180                              \\ \hline
+Recomendação Híbrida Mista           & 32,81                              \\ \hline
 \end{tabular}
 \end{table}
 
 Infelizmente, devido ao nível de complexidade do algoritmo, principalmente em relação ao acesso aos dados pelo ORM \textit{(Object Relational Mapper)} foi observado uma perca de performance significativa no uso do algoritmo de maneira concorrente.
 
 Para um melhor resultado no processo de concorrência torna-se necessário um conhecimento mais profundo acerca do gerenciamento de processos e escalonamento embutido no Spring, além de ajustes na arquitetura e modelagem do sistema procurando separar logicamente as lógicas de concorrência do restante do projeto.
-
 
 \textbf{Matriz de recomendação offline}
 
@@ -106,32 +103,31 @@ Para realização dos testes de performance, foram utilizados os mesmos ambiente
 
 Desse modo, foi possível definir os seguintes dados:
 
-\begin{table}[]
-\begin{tabular}{|c|c|c|}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
 \hline
-\multicolumn{3}{|c|}{\textbf{Tempo de Recomendação - Sem Matriz Offline}}                    \\ \hline
-\textbf{Informações}                  & \multicolumn{2}{c|}{\textbf{Tempo de Execução (ms)}} \\ \hline
-Ambientes                             & Ambiente 1                & Ambiente 2               \\ \hline
-Recomendação Colaborativa             & x ms                      & x ms                     \\ \hline
-Recomendação Baseada em Conteúdo      & x ms                      & x ms                     \\ \hline
-Recomendação Híbrida Ponderada        & x ms                      & x ms                     \\ \hline
-Recomendação Híbrida Mista            & x ms                      & x ms                     \\ \hline
+\multicolumn{2}{|c|}{\textbf{Tempo de Recomendação - Sem Matriz Offline}} \\ \hline
+\textbf{Informações}                 & \textbf{Tempo de Execução (s)}    \\ \hline
+Recomendação Colaborativa            & 2,88                               \\ \hline
+Recomendação Baseada em Conteúdo     & 3,02                               \\ \hline
+Recomendação Híbrida Ponderada       & 20,64                              \\ \hline
+Recomendação Híbrida Mista           & 5,64                               \\ \hline
 \end{tabular}
 \end{table}
 
-\begin{table}[]
-\begin{tabular}{|c|c|c|}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
 \hline
-\multicolumn{3}{|c|}{\textbf{Tempo de Recomendação - Com Matriz Offline}}                    \\ \hline
-\textbf{Informações}                  & \multicolumn{2}{c|}{\textbf{Tempo de Execução (ms)}} \\ \hline
-Ambientes                             & Ambiente 1                & Ambiente 2               \\ \hline
-Recomendação Colaborativa             & x ms                      & x ms                     \\ \hline
-Recomendação Baseada em Conteúdo      & x ms                      & x ms                     \\ \hline
-Recomendação Híbrida Ponderada        & x ms                      & x ms                     \\ \hline
-Recomendação Híbrida Mista            & x ms                      & x ms                     \\ \hline
+\multicolumn{2}{|c|}{\textbf{Tempo de Recomendação - Com Matriz Offline}} \\ \hline
+\textbf{Informações}                 & \textbf{Tempo de Execução (s)}    \\ \hline
+Recomendação Colaborativa            & 1,96                               \\ \hline
+Recomendação Baseada em Conteúdo     & 1,60                             \\ \hline
+Recomendação Híbrida Ponderada       & 1,31                               \\ \hline
+Recomendação Híbrida Mista           & 1,32                               \\ \hline
 \end{tabular}
 \end{table}
-
 \subsection{Cliente Administrativo}
 
 Para acesso e manipulação dos recursos do sistema foi desenvolvido um cliente administrativo para acesso na WEB. Nele é possível cadastrar, alterar, visualizar e remover os principais recursos do sistema, permitindo que um usuário com perfil de administrador possa criar e manipular diversos projetos. Nas figuras \ref{fig:clienteAdminLogin}, \ref{fig:clienteAdminProjeto}, \ref{fig:clienteAdminCriarProjeto}, \ref{fig:clienteAdminUsuarios}, \ref{fig:clienteAdminAvaliacoes}, \ref{fig:clienteAdminRecomendacoes} e \ref{fig:clienteAdminUsuarioAPI} é possível visualizar algumas das telas do sistema.
@@ -359,16 +355,83 @@ Número de recomendações & 141                  \\ \hline
 
 \subsection{Análise Descritiva}
 
-Utilizando-se da análise descritiva foi possível definir a taxa de acerto do sistema sobre as recomendações que seriam aceitas pelos usuários. Na figura X pode ser observado a comparação entre as notas geradas pelas estratégias de recomendação e a nota real informada pelo usuário, o que possibilita a realização do processo de estatística descritiva.
+Utilizando-se da análise descritiva foi possível definir a taxa de acerto do sistema sobre as recomendações que seriam aceitas pelos usuários. Nas figuras \ref{fig:findMusicEstatistica1}, \ref{fig:findMusicEstatistica2}, \ref{fig:findMusicEstatistica3} e \ref{fig:findMusicEstatistica4} pode ser observado a comparação entre as notas geradas pelas estratégias de recomendação e a nota real informada pelo usuário, o que possibilita a realização do processo de estatística descritiva.
 
-% FIGURA ESTATÌSTICA DESCRITIVA
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{imagens/findMusicResultados1.jpg}
+	\caption[Estatística Descritiva: Parte 1]{Estatística Descritiva: Parte 1}
+    \label{fig:findMusicEstatistica1}
+\end{figure}
 
-A partir das células marcadas com a cor verde na figura X, torna-se possível observar quais itens seriam recomendados pelo sistema (tendo como consideração um ponto de corte definido como X). Na figura X são apresentados os resultados relativos a taxa de erros e acertos das recomendações nesse estudo de caso:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{imagens/findMusicResultados2.jpg}
+	\caption[Estatística Descritiva: Parte 2]{Estatística Descritiva: Parte 2}
+    \label{fig:findMusicEstatistica2}
+\end{figure}
 
-% Figura taxa acerto recomendaçaõ
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{imagens/findMusicResultados3.jpg}
+	\caption[Estatística Descritiva: Parte 3]{Estatística Descritiva: Parte 3}
+    \label{fig:findMusicEstatistica3}
+\end{figure}
 
-De acordo com os dados disponíveis na figura X, conclui-se que as abordagens híbridas (marcadas pela cor verde) obtiveram um resultado superior as estratégias colaborativa e baseada em conteúdo quando utilizadas de maneira isolada.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.8\linewidth]{imagens/findMusicResultados4.jpg}
+	\caption[Estatística Descritiva: Parte 4]{Estatística Descritiva: Parte 4}
+    \label{fig:findMusicEstatistica4}
+\end{figure}
+
+A partir das células marcadas com a cor verde nas figuras \ref{fig:findMusicEstatistica1}, \ref{fig:findMusicEstatistica2}, \ref{fig:findMusicEstatistica3} e \ref{fig:findMusicEstatistica4}, torna-se possível observar quais itens seriam recomendados pelo sistema (tendo como consideração um ponto de corte definido como 4 pontos). Na figura \ref{fig:findMusicEstatisticaTaxa} são apresentados os resultados relativos a taxa de erros e acertos das recomendações nesse estudo de caso:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.9\linewidth]{imagens/findmusicEstatisticaTaxa.jpg}
+	\caption[Taxas da Estatística Descritiva]{Taxas da Estatística Descritiva}
+    \label{fig:findMusicEstatisticaTaxa}
+\end{figure}
+
+De acordo com os dados disponíveis na figura \ref{fig:findMusicEstatisticaTaxa}, conclui-se que as abordagens híbridas (marcadas pela cor verde) obtiveram um resultado superior as estratégias colaborativa e baseada em conteúdo quando utilizadas de maneira isolada.
 
 \subsection{Testes em T}
 
 Como outra forma de avaliação estatística das recomendações foi utilizado o teste em T, que busca avaliar a distância entre os resultados recomendados e as notas avaliadas em determinado item pelo avaliador. Nesse tipo de abordagem é analisado a distância entre os valores recomendados e os avaliados pelos avaliadores, buscando a menor divergência entre os valores possíveis.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.6\linewidth]{imagens/findmusicTesteTColaborativa.jpg}
+	\caption[Teste T: Filtragem Colaborativa]{Teste T: Filtragem Colaborativa}
+    \label{fig:findMusicTesteTColaborativa}
+\end{figure}
+
+A partir dos resultados obtidos na figura \ref{fig:findMusicTesteTColaborativa}, pode-se observar que o valor de \textbf{P(t<=t) bi-caudal} é superior a \textbf{0,05}. Isso significa que as recomendações para filtragem colaborativa foram boas, uma vez que apresentam similaridade com as avaliações dos usuários.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.6\linewidth]{imagens/findmusicTesteTConteudo.jpg}
+	\caption[Teste T: Filtragem Baseada em Conteúdo]{Teste T: Filtragem Baseada em Conteúdo}
+    \label{fig:findMusicTesteTConteudo}
+\end{figure}
+
+A partir das informações mostradas na figura \ref{fig:findMusicTesteTConteudo}, é possível analisar que o valor \textbf{P(t<=t) bi-caudal} é superior a \textbf{0,05}. Isso demonstra que as recomendações geradas na filtragem baseada em conteúdo apresentam similaridade com as avaliações dos usuários.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.6\linewidth]{imagens/findmusicTesteTPonderado.jpg}
+	\caption[Teste T: Filtragem Híbrida Ponderada]{Teste T: Filtragem Híbrida Ponderada}
+    \label{fig:findMusicTesteTPonderado}
+\end{figure}
+
+Com os dados definidos na figura \ref{fig:findMusicTesteTPonderado}, é possível observar que o valor \textbf{P(t<=t) bi-caudal} superior a \textbf{0,05}. Isso demonstra que as recomendações da filtragem híbrida ponderada são similares as avaliações dos usuários.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.6\linewidth]{imagens/findmusicTesteTMista.jpg}
+	\caption[Teste T: Filtragem Híbrida Mista]{Filtragem Híbrida Mista}
+    \label{fig:findMusicTesteTMista}
+\end{figure}
+
+De acordo com a figura \ref{fig:findMusicTesteTMista}, os resultados das recomendações da abordagem híbrida mista não apresentam bons níveis de similaridade com as avaliações dos usuários, visto que, o valor \textbf{P(t<=t) bi-caudal} é inferior a \textbf{0,05}.
