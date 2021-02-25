@@ -208,7 +208,7 @@ O modelo REST apresenta algumas atribuições básicas, criadas por \cite{fieldi
 
 A realização da comunicação nesse modelo de arquitetura é realizada a partir do protocolo HTTP, onde os verbos do HTTP definem qual tipo de operação será realizada com o recurso requerido na requisição.
 
-Na tabela , pode-se analisar a correspondência entre os métodos HTTP e as operações realizadas nas requisições de acordo com a \citeonline{rfc7231} e \citeonline{rfc7231}:
+Na tabela \ref{tableref:metodoHttp}, pode-se analisar a correspondência entre os métodos HTTP e as operações realizadas nas requisições de acordo com a \citeonline{rfc7231} e \citeonline{rfc7231}:
 
 \begin{table}[H]
 \begin{tabular}{c|l}
@@ -221,8 +221,10 @@ DELETE               & Remove um recurso                                        
 CONNECT              & Estabelece um túnel de conexão ao servidor                   \\
 OPTIONS              & Solicita os métodos e opções disponíveis no servidor         \\
 TRACE                & Executa um teste de chamada loop-back ao servidor de destino \\
-PATCH                & Realiza alterações parciais em um recurso                  \label{table:metodoHttp} 
+PATCH                & Realiza alterações parciais em um recurso
 \end{tabular}
+\caption{Métodos do protocolo HTTP}
+\label{tableref:metodoHttp}
 \end{table}
 
 O modelo de arquitetura definido por \citeonline{fielding2000architectural} mostra-se uma excelente opção aos tradicionais \textit{web services} SOAP \footnote{Protocolo para troca de mensagens em sistemas distribuídos. Baseia-se na estrutura de XML para representação dados, sendo comumente combinado com protocolos como o HTTP \cite{box2000simple}} disponíveis, principalmente em relação ao desempenho que se beneficia de menores tempos de respostas e trafégos de dados na arquitetura REST como apresentado por \citeonline{saad2010performance} e \citeonline{dudhe2014performance}.

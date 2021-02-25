@@ -111,7 +111,7 @@ Com o coeficiente de similaridade definido, podemos visualizar que quando maior 
 
 \subsection{Similaridade entre itens}
 
-Com os coeficientes de similaridade definidos, pode-se analisar calcular as notas dos itens para recomendação. Na abordagem colaborativa a similaridade dos usuários será utilizada como forma de peso para as suas avaliações, sendo que quanto mais próximo os usuários estejam, maior será o impacto de suas avaliações na nota que será recomendada pelo sistema.
+Com os coeficientes de similaridade definidos, pode-se calcular as notas dos itens para recomendação. Na abordagem colaborativa a similaridade dos usuários será utilizada como forma de peso para as suas avaliações, sendo que quanto mais próximo os usuários estejam, maior será o impacto de suas avaliações na nota que será recomendada pelo sistema.
 
 Levando a análise do Jorge como exemplo, pode-se calcular as notas avaliadas pelos outros usuários acerca dos itens. Para isso, é realizado a multiplicação entre as notas avaliadas e o coeficiente de similaridade entre Jorge e o usuário em questão, conforme mostrado na figura \ref{fig:similaridadeAvaliacoes}:
 
@@ -124,7 +124,7 @@ Levando a análise do Jorge como exemplo, pode-se calcular as notas avaliadas pe
 
 \subsection{Cálculo da recomendação}
 
-Com os dados de similaridade de itens disponíveis, é possível calcular a possível nota que o usuário dará para os itens que ainda não avaliou. Utilizando o exemplo do Jorge, é possível visualizar que a bateria ainda não foi avaliada. Dessa forma, pode-se calcular essa nota, utilizando os seguintes passos descritos abaixo:
+Com os dados de similaridade de itens disponíveis, é possível calcular a possível nota que o usuário dará para os itens que ainda não avaliou. Utilizando o exemplo do Jorge, é possível visualizar que a bateria ainda não foi avaliada. Dessa forma, pode-se calcular essa nota, utilizando os seguintes passos:
 
 \begin{itemize}
     \item Soma das similaridades dos usuários;
@@ -206,7 +206,7 @@ Para essa avaliação, será realizado a criação de perfil para o usuário. Us
 
 \subsection{Similaridade entre as tags}
 
-Para definir a similaridade dos itens com o usuário é necessário do perfil criado no passo anterior. Para definição dos coeficientes é necessário realizar o cálculo da distância euclidiana entre as notas avaliadas pelo usuário e os valores calculados para seu perfil. Para exemplificação, pode-se analisar a figura \ref{fig:coordenadasConteudo} que mostra o cálculo da distância euclidiana entre Jorge e o Celular:
+Para definir a similaridade dos itens com o usuário é necessário a utilização do perfil criado no passo anterior. Para definição dos coeficientes é necessário realizar o cálculo da distância euclidiana entre as notas avaliadas pelo usuário e os valores calculados para seu perfil. Para exemplificação, pode-se analisar a figura \ref{fig:coordenadasConteudo} que mostra o cálculo da distância euclidiana entre Jorge e o Celular:
 
 \begin{figure}[H]
 	\centering
