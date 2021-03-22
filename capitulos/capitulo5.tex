@@ -26,7 +26,7 @@ Com auxílio da ferramenta \textit{Astah Community}, foi desenvolvido o seguinte
 
 \subsection{API de Recomendação}
 
-Foi desenvolvido uma aplicação backend aberta para uso e modificações. O código fonte de aplicação está disponível no \href{https://github.com/herikLorencao/srh-backend}{GitHub} \footnote{Link do repositório: https://github.com/herikLorencao/srh-backend} podendo ser modificado e adaptado.
+Foi desenvolvida uma aplicação backend aberta para uso e modificações. O código fonte de aplicação está disponível no \href{https://github.com/herikLorencao/srh-backend}{GitHub} \footnote{Link do repositório: https://github.com/herikLorencao/srh-backend} podendo ser modificado e adaptado.
 
 Foram desenvolvidos um total de 103 endpoints para a API, que incluem desde cadastros até rotinas de autenticação e recomendação. Todas as rotas estão documentadas e disponíveis no serviço \href{https://documenter.getpostman.com/view/6420672/T1LVA4ST}{Postman} \footnote{Link dos endpoints da API: https://documenter.getpostman.com/view/6420672/T1LVA4ST} para acesso.
 
@@ -64,7 +64,7 @@ Armazenamento        & 1 TB HDD                        \\ \hline
 \label{tableref:ambienteTeste}
 \end{table}
 
-Com os ambientes definidos, foram executadas três requisições para cada abordagem de recomendação nos servidores onde foi mapeado o tempo de resposta para o cliente de cada recomendação. Com os dados definidos, foi realizada uma média aritmética dos valores, resultando nos seguintes dados definidos nas tabelas \ref{tableref:execucaoRecomendacaoSemConcorrencia} e \ref{tableref:execucaoRecomendacaoComConcorrencia}:
+Com os ambientes definidos, foram executadas três requisições para cada abordagem de recomendação nos servidores onde foi mapeado o tempo de resposta para o cliente de cada recomendação. Com os dados definidos, foi realizada uma média aritmética dos valores, resultando nos dados definidos nas tabelas \ref{tableref:execucaoRecomendacaoSemConcorrencia} e \ref{tableref:execucaoRecomendacaoComConcorrencia}. Como dados para análise foram utilizados as informações coletadas no estudo de caso educacional.
 
 \begin{table}[H]
 \centering
@@ -96,49 +96,39 @@ Recomendação Híbrida Mista           & 32,81                              \\ 
 \label{tableref:execucaoRecomendacaoComConcorrencia}
 \end{table}
 
-Infelizmente, devido ao nível de complexidade do algoritmo, principalmente em relação ao acesso aos dados pelo ORM \textit{(Object Relational Mapper)} foi observado uma perca de performance significativa no uso do algoritmo de maneira concorrente.
+Infelizmente, devido ao nível de complexidade do algoritmo, principalmente em relação ao acesso aos dados pelo ORM \textit{(Object Relational Mapper)} foi observado uma perca de performance significativa no uso do algoritmo de maneira concorrente. Outro fator que deve ser levado em consideração, é em relação ao \textit{overhead} gerado pelo processo de concorrência, visto que vários processos também precisar ser iniciados e manipulados para que o processo de recomendação ocorra, fazendo com que o tempo de execução possa ser prejudicado.
 
-Para um melhor resultado no processo de concorrência torna-se necessário um conhecimento mais profundo acerca do gerenciamento de processos e escalonamento embutido no Spring, além de ajustes na arquitetura e modelagem do sistema procurando separar logicamente as lógicas de concorrência do restante do projeto.
+Para verificar os resultados com um volume maior de dados, foram gerados diversos cadastros randômicos no sistema fazendo com que se atingisse o valor de cerca de 2000 recomendações. De maneira geral, os problemas do ORM ainda persistiram, fazendo com que não houvesse melhorias significativas no desempenho do sistema, mesmo com um volume de dados maior.
+
+Para um melhor resultado no processo de concorrência torna-se necessário um conhecimento mais profundo acerca do gerenciamento de processos e escalonamento embutido no Spring, além de ajustes na arquitetura e modelagem do sistema procurando separar logicamente as classes de recomendação do restante do projeto.
+
+Como alternativa para desenvolvimento de um sistema concorrente pode ser interessante avaliar o uso do Spring Reactive \footnote{Documentação disponível em: https://spring.io/reactive}, uma vez que essa ferramenta apresenta diversos recursos que visam permitir e facilitar o desenvolvimento de sistemas que utilizem conceitos concorrentes.
 
 \textbf{Matriz de recomendação offline}
 
-Como forma de buscar uma maneira de acesso mais rápido as recomendações, foi desenvolvido um endpoint para recomendação offline que acaba utilizando-se de dados salvos anteriormente para busca das recomendações, evitando o processamento e cálculo das recomendações novamente, o que acaba por oferecer um menor tempo de resposta para os usuários.
+Como forma de buscar uma maneira de acesso mais rápido às recomendações, foi desenvolvido um endpoint para recomendação offline que acaba utilizando-se de dados salvos anteriormente para busca das recomendações, evitando o processamento e cálculo das recomendações novamente, o que acaba por oferecer um menor tempo de resposta para os usuários.
 
 Vale ressaltar que esse processo utiliza-se das recomendações já salvas no banco de dados da aplicação, fazendo com que esses dados não sejam os mais atuais possíveis. Esse fator negativo é recompensado pelo menor tempo de resposta do servidor, além da redução de processamento e acesso ao banco de dados pelo sistema.
 
 Para realização dos testes de performance, foram utilizados os mesmos ambientes de teste informados na seção de resultados relativa à concorrência. O processo de mapeamento dos dados foi semelhante, capturando o tempo de resposta das requisições e realizando a média aritmética dos resultados.
 
-Desse modo, foi possível definir os seguintes dados apresentados nas tabelas \ref{tableref:execucaoRecomendacaoSemMatrix} e \ref{tableref:execucaoRecomendacaoComMatrix}:
+Desse modo, foi possível definir os seguintes dados apresentados na tabela \ref{tableref:execucaoRecomendacaoMatrix}:
 
 \begin{table}[H]
 \centering
-\begin{tabular}{|c|c|}
+\begin{tabular}{|c|c|c|}
 \hline
-\multicolumn{2}{|c|}{\textbf{Tempo de Recomendação - Sem Matriz Offline}} \\ \hline
-\textbf{Informações}                 & \textbf{Tempo de Execução (s)}    \\ \hline
-Recomendação Colaborativa            & 2,88                               \\ \hline
-Recomendação Baseada em Conteúdo     & 3,02                               \\ \hline
-Recomendação Híbrida Ponderada       & 20,64                              \\ \hline
-Recomendação Híbrida Mista           & 5,64                               \\ \hline
+\multicolumn{3}{|c|}{\textbf{Tempo de Execução das Recomendações em segundos}}  \\ \hline
+\textbf{Abordagem}  & \textbf{Com matrix offline} & \textbf{Sem matrix offline} \\ \hline
+Colaborativa        & 1,96                        & 2,88                        \\ \hline
+Baseada em Conteúdo & 1,60                        & 3,02                        \\ \hline
+Híbrida Ponderada   & 1,31                        & 20,64                       \\ \hline
+Híbrida Mista       & 1,32                        & 5,64                        \\ \hline
 \end{tabular}
-\caption{Tempo de execução das recomendações: sem matrix offline}
-\label{tableref:execucaoRecomendacaoSemMatrix}
+\caption{Comparação da execução utilizando a técnica de matrix de recomendação offline}
+\label{tableref:execucaoRecomendacaoMatrix}
 \end{table}
 
-\begin{table}[H]
-\centering
-\begin{tabular}{|c|c|}
-\hline
-\multicolumn{2}{|c|}{\textbf{Tempo de Recomendação - Com Matriz Offline}} \\ \hline
-\textbf{Informações}                 & \textbf{Tempo de Execução (s)}    \\ \hline
-Recomendação Colaborativa            & 1,96                               \\ \hline
-Recomendação Baseada em Conteúdo     & 1,60                             \\ \hline
-Recomendação Híbrida Ponderada       & 1,31                               \\ \hline
-Recomendação Híbrida Mista           & 1,32                               \\ \hline
-\end{tabular}
-\caption{Tempo de execução das recomendações: com matrix offline}
-\label{tableref:execucaoRecomendacaoComMatrix}
-\end{table}
 \subsection{Cliente Administrativo}
 
 Para acesso e manipulação dos recursos do sistema foi desenvolvido um cliente administrativo para acesso na WEB\footnote{Link do repositório: https://github.com/herikLorencao/srh-client-admin}. Nele é possível cadastrar, alterar, visualizar e remover os principais recursos do sistema, permitindo que um usuário com perfil de administrador possa criar e manipular diversos projetos. Nas figuras \ref{fig:clienteAdminLogin}, \ref{fig:clienteAdminProjeto}, \ref{fig:clienteAdminCriarProjeto}, \ref{fig:clienteAdminUsuarios}, \ref{fig:clienteAdminAvaliacoes}, \ref{fig:clienteAdminRecomendacoes} e \ref{fig:clienteAdminUsuarioAPI} é possível visualizar algumas das telas do sistema.
@@ -236,11 +226,10 @@ Para que os avaliadores possam avaliar os itens em seus respectivos projetos foi
 \subsection{Contexto}
 
 O intuito deste estudo de caso foi recomendar exercícios aos alunos que pudessem auxiliar significativamente com seu aprendizado no conteúdo estudado.
-\newline
 
 Para desenvolvendo do estudo de caso, foi selecionada uma turma do curso técnico de Informática Integrado ao Ensino Médio do IFES - Campus Cachoeiro de Itapemirim. O objetivo era o de realizar perguntas relacionadas ao tema de estruturas de controle, na disciplina de Programação I.
 
-Desse modo, o questionário foi aplicado na turma sendo pedido que todos os alunos respondessem todas as perguntas. Para avaliar a assertividade do sistema de recomendação, foram retiradas, de forma aleatória, um conjunto de 0 à 4 respostas de cada aluno, tendo como objetivo criar um ambiente para recomendação onde fosse possível avaliar a taxa de acerto das notas recomendadas.
+Desse modo, o questionário foi aplicado na turma sendo pedido que todos os alunos respondessem todas as perguntas. Para avaliar a assertividade do sistema de recomendação, foram retiradas, de forma aleatória, um conjunto de 0 a 4 respostas de cada aluno, tendo como objetivo criar um ambiente para recomendação onde fosse possível avaliar a taxa de acerto das notas recomendadas.
 
 Na tabela \ref{tableref:dadosEstudoCasoEducacional} é possível visualizar os dados acerca da pesquisa realizada:
 

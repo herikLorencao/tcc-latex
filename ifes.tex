@@ -14,7 +14,7 @@
 \usepackage{setspace}
 \usepackage{quoting}
 \usepackage{setspace}% http://ctan.org/pkg/{setspace,lipsum}
-
+\usepackage{pdfpages}
 
 
 
@@ -70,7 +70,8 @@
 \imprimirfolhaderosto*
 
 %\include{outros/ficha}
-\include{outros/aprovacao}
+%\include{outros/aprovacao}
+\includepdf[pages=-]{outros/folha-aprovacao.pdf}
 \include{outros/declaracaoautor}
 \include{outros/dedicatoria}
 \include{outros/agradecimento}

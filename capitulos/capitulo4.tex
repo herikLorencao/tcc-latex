@@ -13,7 +13,7 @@
 
 \subsection{Componentes}
 
-Para elaboração do sistema proposto, foi utilizado uma arquitetura baseada em sistemas distribuídos, que a partir do protocolo HTTP comunica-se entre seus componentes. Esses componentes podem ser vistos na figura \ref{fig:arquitetura}:
+Para elaboração do sistema proposto, foi utilizada uma arquitetura baseada em sistemas distribuídos, que a partir do protocolo HTTP comunica-se entre seus componentes. Esses componentes podem ser vistos na figura \ref{fig:arquitetura}:
 
 \begin{figure}[H]
 	\centering
@@ -37,7 +37,7 @@ Cada um dos componentes definidos apresenta uma respectiva função no sistema, 
 As seguintes tecnologias foram utilizadas para elaboração do sistema:
 
 \begin{itemize}
-    \item \textbf{Java 14:} linguagem escolhida para desenvolvimento do backend devido a facilidade de implementação de concorrência e por ter sido utilizada na elaboração dos algoritmos usados como base para elaboração do sistema proposto.
+    \item \textbf{Java 14:} linguagem escolhida para desenvolvimento do \textit{backend} devido a facilidade de implementação de concorrência e por ter sido utilizada na elaboração dos algoritmos usados como base para elaboração do sistema proposto.
     
     \item \textbf{Spring Boot 2.2.6:} framework utilizado para desenvolvimento da arquitetura web do backend. Possui diversas bibliotecas e implementações que facilitam o desenvolvimento de sistemas robustos e seguros.
     
@@ -89,12 +89,14 @@ Todos os cálculos e processos dos algoritmos podem ser vistos detalhadamente na
 
 \subsection{Distância euclidiana}
 
-O cálculo da distância euclidiana prove a medição da distância entre dois pontos, permitindo desse modo, sua utilização para definição da similaridade entre os objetos de um sistema de recomendação. A fórmula da distância euclidiana pode ser visualizada abaixo:
+O cálculo da distância euclidiana prove a medição da distância entre dois pontos, permitindo desse modo, sua utilização para definição da similaridade entre os elementos no sistema de recomendação. A fórmula da distância euclidiana pode ser visualizada na figura \ref{fig:distanciaEuclidianaFormula}:
 
-\begin{equation*}
-    DE\left( x,y\right)   = \sqrt {\sum _{i}^{p}  \left( x_{i}-y_{i}\right)^2 }
-    \label{eq:euclidiana}
-\end{equation*}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{imagens/equacaoEuclidiana.png}
+	\caption[Fórmula da Distância Euclidiana]{Fórmula da Distância Euclidiana, adaptado de \cite{danielsson1980euclidean}}
+    \label{fig:distanciaEuclidianaFormula}
+\end{figure}
 
 \subsection{Recomendação colaborativa}
 
@@ -162,7 +164,7 @@ Na abordagem mista os resultados gerados por ambas as recomendações (colaborat
     \label{fig:algoritmohibridomisto}
 \end{figure}
 
-Para abordagem ponderada, é realizado uma normalização e combinação linear dos dados obtidos nas abordagens colaborativa e baseada em conteúdo, para que então, a partir disso, seja gerado a matriz de recomendação final. Nesse trabalho foi utilizado a média entre valores para o processo de combinação dos resultados, é possível ver um exemplo dessa abordagem na figura \ref{fig:algoritmohibridoponderado}:
+Para abordagem ponderada, é realizada uma normalização e combinação linear dos dados obtidos nas abordagens colaborativa e baseada em conteúdo, para que então, a partir disso, seja gerado a matriz de recomendação final. Nesse trabalho foi utilizado a média entre valores para o processo de combinação dos resultados, é possível ver um exemplo dessa abordagem na figura \ref{fig:algoritmohibridoponderado}:
 
 \begin{figure}[H]
 	\centering
@@ -170,3 +172,19 @@ Para abordagem ponderada, é realizado uma normalização e combinação linear 
 	\caption[Exemplo de filtragem híbrida ponderada]{Exemplo de filtragem híbrida ponderada, adaptado de \cite{araujo2011apprecommender}}
     \label{fig:algoritmohibridoponderado}
 \end{figure}
+
+\subsection{Estatística descritiva}
+
+Para análise e comparação dos dados e resultados obtidos pode-se utilizar o método estatístico. A estatística é uma ciência que apresenta métodos e processos para coletar, apresentar e interpretar um conjunto de dados, sejam eles de natureza numérica ou não. A estatística subdivide-se em três áreas, sendo elas: descritiva, probabilística e inferencial \cite{guedes2005estatistica}.
+
+A estatística descritiva tem como objetivo reunir e sintetizar valores de uma mesma natureza. A partir disso, é buscado obter uma visão global acerca da variação entre os valores, possibilitando sua visualização à partir de tabelas, gráficos ou medidas descritivas \cite{guedes2005estatistica}. 
+
+Para visualização e comparação de tendências, torna-se necessário expressar esses comportamentos a partir de números ou estatísticas. De forma geral, esses números ou estatísticas são divididos em duas categorias: medidas de posição e medidas de dispersão \cite{guedes2005estatistica}.
+
+\subsection{Teste em T de Student}
+
+O teste em T de Student apresenta-se como um teste de hipótese (que permite a tomada de uma decisão entre duas ou mais hipóteses) onde é analisado se uma hipótese é ou não válida utilizando-se a distribuição em T de Student \cite{d1990conceitos}.
+
+\textbf{Teste t para média de uma amostra}
+
+Para análise dos dados nesse trabalho, a abordagem de teste em t para média de uma amostra foi selecionada. Nessa abordagem, é buscado mensurar se a probabilidade da média da amostra apresenta o valor esperado, dada a média da população \cite{d1990conceitos}.
